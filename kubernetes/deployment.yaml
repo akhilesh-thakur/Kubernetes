@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: your-next-app-deployment
+  name: ikuber-nextjs-deployment
 spec:
-  replicas: 1
+  replicas: 2  # Adjust the number of replicas based on your needs
   selector:
     matchLabels:
-      app: your-next-app
+      app: ikuber-nextjs
   template:
     metadata:
       labels:
-        app: your-next-app
+        app: ikuber-nextjs
     spec:
       containers:
-        - name: your-next-app
-          image: your-docker-image-name:latest
-          ports:
-            - containerPort: 3000
+      - name: ikuber-nextjs-container
+        image: akhieshthakur/ikuber_nextjs:latest
+        ports:
+        - containerPort: 3000
