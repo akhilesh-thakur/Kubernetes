@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: your-next-app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: your-next-app
+  template:
+    metadata:
+      labels:
+        app: your-next-app
+    spec:
+      containers:
+        - name: your-next-app
+          image: your-docker-image-name:latest
+          ports:
+            - containerPort: 3000
